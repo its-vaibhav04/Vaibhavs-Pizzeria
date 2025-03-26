@@ -39,6 +39,8 @@ export const {
   clearCart,
 } = cartSlice.actions;
 
+export const getCart = (state) => state.cart.cart;
+
 export const getTotalCartPrice = (state) => {
   return state.cart.cart.reduce((acc, item) => acc + item.totalPrice, 0);
 };

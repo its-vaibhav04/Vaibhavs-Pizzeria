@@ -6,12 +6,14 @@ function OrderItem({ item, isLoadingIngredients, ingredients }) {
   return (
     <li className="space-y-1 py-3">
       <div className="flex items-center justify-between gap-4 text-sm">
-        <p>
+        <p className="dark:text-stone-200">
           <span className="font-bold">{quantity}&times;</span> {name}
         </p>
-        <p className="font-bold">{formatCurrency(totalPrice)}</p>
+        <p className="font-bold dark:text-stone-200">
+          {formatCurrency(totalPrice)}
+        </p>
       </div>
-      <p className="text-sm text-stone-500 capitalize italic">
+      <p className="text-sm text-stone-500 capitalize italic dark:text-stone-400">
         {isLoadingIngredients ? "Loading..." : ingredients.join(", ")}
       </p>
     </li>

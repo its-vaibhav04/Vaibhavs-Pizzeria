@@ -31,15 +31,17 @@ function MenuItem({ pizza }) {
         className={`h-24 ${soldOut ? "opacity-70 grayscale" : ""}`}
       />
       <div className="flex grow flex-col pt-0.5">
-        <p className="font-semibold">{name}</p>
-        <p className="text-sm text-stone-500 capitalize italic">
+        <p className="font-semibold dark:text-stone-200">{name}</p>
+        <p className="text-sm text-stone-500 capitalize italic dark:text-stone-400">
           {ingredients.join(", ")}
         </p>
         <div className="mt-auto flex items-center justify-between">
           {!soldOut ? (
-            <p className="text-sm">{formatCurrency(unitPrice)}</p>
+            <p className="text-sm dark:text-stone-200">
+              {formatCurrency(unitPrice)}
+            </p>
           ) : (
-            <p className="text-sm font-medium text-stone-500 uppercase">
+            <p className="text-sm font-medium text-stone-500 uppercase dark:text-stone-400">
               Sold out
             </p>
           )}

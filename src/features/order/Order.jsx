@@ -35,7 +35,9 @@ function Order() {
   return (
     <div className="space-y-8 px-6 py-4">
       <div className="flex flex-wrap items-center justify-between gap-2">
-        <h2 className="text-xl font-semibold">Order #{id} Status</h2>
+        <h2 className="text-xl font-semibold dark:text-stone-200">
+          Order #{id} Status
+        </h2>
 
         <div className="space-x-2">
           {priority && (
@@ -49,17 +51,17 @@ function Order() {
         </div>
       </div>
 
-      <div className="flex flex-wrap items-center justify-between gap-2 bg-stone-200 px-6 py-5">
-        <p className="font-medium">
+      <div className="flex flex-wrap items-center justify-between gap-2 bg-stone-200 px-6 py-5 dark:bg-stone-800">
+        <p className="font-medium dark:text-stone-200">
           {deliveryIn >= 0
             ? `Only ${calcMinutesLeft(estimatedDelivery)} minutes left 😃`
             : "Order should have arrived"}
         </p>
-        <p className="text-xs text-stone-500">
+        <p className="text-xs text-stone-500 dark:text-stone-400">
           (Estimated delivery: {formatDate(estimatedDelivery)})
         </p>
       </div>
-      <ul className="divide-y divide-stone-200 border-t border-b border-stone-200">
+      <ul className="divide-y divide-stone-200 border-t border-b border-stone-200 dark:divide-stone-700 dark:border-stone-700">
         {cart.map((item) => (
           <OrderItem
             item={item}
@@ -73,16 +75,16 @@ function Order() {
         ))}
       </ul>
 
-      <div className="space-y-2 bg-stone-200 px-6 py-5">
-        <p className="text-sm font-medium text-stone-600">
+      <div className="space-y-2 bg-stone-200 px-6 py-5 dark:bg-stone-800">
+        <p className="text-sm font-medium text-stone-600 dark:text-stone-300">
           Price pizza: {formatCurrency(orderPrice)}
         </p>
         {priority && (
-          <p className="text-sm font-medium text-stone-600">
+          <p className="text-sm font-medium text-stone-600 dark:text-stone-300">
             Price priority: {formatCurrency(priorityPrice)}
           </p>
         )}
-        <p className="font-bold">
+        <p className="font-bold text-stone-600 dark:text-stone-200">
           To pay on delivery: {formatCurrency(orderPrice + priorityPrice)}
         </p>
       </div>
